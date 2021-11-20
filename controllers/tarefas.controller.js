@@ -15,7 +15,7 @@ class TarefasController {
         res.send(tarefa);
     }
     //função que cadastra no BD uma tarefa recebida pelo front
-    createTarfa = async (req, res) => {
+    createTarefa = async (req, res) => {
         const tarefa = req.body;
         if(!req.body){
             return;
