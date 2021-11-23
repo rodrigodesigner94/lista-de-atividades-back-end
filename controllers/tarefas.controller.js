@@ -1,4 +1,4 @@
-const TarefasService = require('./../services/tarefas.service')
+const TarefasService = require('./../services/tarefas.service');
 const tarefasService = new TarefasService;
 
 //class para controlar os metodos
@@ -17,10 +17,10 @@ class TarefasController {
     //função que cadastra no BD uma tarefa recebida pelo front
     createTarefa = async (req, res) => {
         const tarefa = req.body;
-        if(!req.body){
-            return;
-        }
-        await tarefasService.create(tarefa)
+        // if(!req.body){
+        //     return;
+        // }
+        await tarefasService.create(req.body)
         .then(() => {
             res.send({message: `Tarefa ${tarefa.nome} cadastrada com sucesso.`})
         })
